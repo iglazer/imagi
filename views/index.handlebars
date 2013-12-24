@@ -3,8 +3,13 @@
   <body>
     <h1>{{title}}</h1>
     <i>
-      <h2>"{{message}}"</h2>
+      <h2>{{message}}</h2>
     </i>
+    <ul>
+    	{{#each links}}
+    	<li><a href="{{this.url}}">{{this.text}}</a></li>
+    	{{/each}}
+    </ul>
     <hr />
     <footer>
       <small>Rendered by Handlebars</small>
