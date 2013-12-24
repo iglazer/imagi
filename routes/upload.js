@@ -1,23 +1,28 @@
 var fs = require('fs');
 
-exports.doit = function (req, res) {
+exports.doIt = function (req, res) {
 	fs.readFile(req.files.image.path, function (err, data) {
-		var imageName = req.file.image.name;
+		var imageName = req.files.image.name;
 
 		/// If there's an error
 		if(!imageName){
 
 			console.log("There was an error")
 			res.redirect("/");
-			res.end();
+//			res.end();
 		} else {
-			var newPath = __dirname + "/uploads/fullsize/" + imageName;
+			var newPath = __dirname + "/../uploads/fullsize/" + imageName;
+
+			// debug code
+			console.log(req.files.image.path);
+			console.log(req.files.image.name);
+			console.log(newPath);
 
 			/// write file to uploads/fullsize folder
 			fs.writeFile(newPath, data, function (err) {
 
 				/// let's see it
-				res.redirect("/uploads/fullsize/" + imageName);
+				res.redirect("/../uploads/fullsize/" + imageName);
 			});
 		}
 	});
