@@ -13,11 +13,6 @@ exports.doIt = function (req, res) {
 		} else {
 			var newPath = __dirname + "/../uploads/fullsize/" + imageName;
 
-			// debug code
-			console.log(req.files.image.path);
-			console.log(req.files.image.name);
-			console.log(newPath);
-
 			/// write file to uploads/fullsize folder
 			fs.writeFile(newPath, data, function (err) {
 
