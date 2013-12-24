@@ -22,3 +22,16 @@ exports.doIt = function (req, res) {
 		}
 	});
 }
+
+exports.show = function(req, res) {
+	file = req.params.file;	
+	var imgData = fs.readFileSync(__dirname + "/../uploads/fullsize/" + file);
+/*
+	fullFilePath = "../uploads/fullsize/" + file;
+	res.render('show',{
+		'imgFile':fullFilePath,
+		'imgName':file
+	});
+*/
+	res.end(imgData,'binary');
+}
