@@ -1,0 +1,10 @@
+<html>
+  <title>{{title}}</title>
+  <body>
+    <h1>Here's all the images we have</h1>
+	<div>{{#each images}}
+		<a href="/show/{{this.imgFile}}"> <img src="/uploads/thumbs/{{this.imgFile}}" /> </a>
+		{{/each}}
+	</div>
+  </body>
+<html>
