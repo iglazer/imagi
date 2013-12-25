@@ -6,5 +6,10 @@
 		<a href="/show/{{this.imgFile}}"> <img src="/uploads/thumbs/{{this.imgFile}}" /> </a>
 		{{/each}}
 	</div>
+    <ul>
+    	{{#each links}}
+    	<li><a href="{{this.url}}">{{this.text}}</a></li>
+    	{{/each}}
+    </ul>
   </body>
 <html>

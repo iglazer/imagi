@@ -2,5 +2,10 @@
   <body>
     <h1>Here is the image: {{title}}</h1>
 		<img src="{{imgPath}}" />
+    <ul>
+    	{{#each links}}
+    	<li><a href="{{this.url}}">{{this.text}}</a></li>
+    	{{/each}}
+    </ul>
   </body>
 <html>

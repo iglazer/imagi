@@ -5,6 +5,10 @@ exports.show = function (req, res) {
 
 	res.render('showImage', {
 		title: file,
-		imgPath: "/uploads/fullsize/" + file
+		imgPath: "/uploads/fullsize/" + file,
+		links: {
+			uploader: { url:'/uploader', text: 'Upload an image'},
+			catalog: { url:'/catalog', text:'See all the images'}
+		}
 	});	
 };
