@@ -1,7 +1,15 @@
 var fs = require('fs');
 var im = require('imagemagick');
+var crypto = require('crypto');
 
 exports.doIt = function (req, res) {
+	var imageName = req.body.imageName;
+	var imageDesc = req.body.imageDesc;
+	
+	console.log(crypto.createHash('sha1').update(req.files.image.name).digest('hex'));
+	console.log(imageName);
+	console.log(imageDesc);
+
 	fs.readFile(req.files.image.path, function (err, data) {
 		var imageName = req.files.image.name;
 

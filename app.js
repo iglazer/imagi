@@ -15,7 +15,7 @@ var uploader = require('./routes/uploader');
 var upload = require('./routes/upload');
 var display = require('./routes/display');
 var catalog = require('./routes/catalog');
-
+var cleanup = require('./routes/cleanup');
 var app = express();
 
 // all environments
@@ -42,6 +42,7 @@ app.get('/uploader', uploader.uploader);
 app.post('/upload', upload.doIt);
 app.get('/catalog', catalog.show);
 app.get('/show/:file', display.show);
+app.get('/cleanup', cleanup.clean);
 
 app.get('/uploads/fullsize/:file', function (req, res){
 	file = req.params.file;
