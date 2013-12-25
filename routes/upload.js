@@ -26,13 +26,14 @@ exports.doIt = function (req, res) {
 							if (err) throw err;
 							console.log('resized image to fit within 200x200px');
 						});
-
-						/// let's see it
 					});
+
+					/// let's see it
+					res.redirect("/show/" + imageName);									
 				} else {
 					res.redirect("/show/" + imageName);				
 				}
-			};
+			});
 		}
 	});
 }

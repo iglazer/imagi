@@ -1,5 +1,3 @@
-//Catalog page data
-
 var fs = require('fs');
 
 exports.show = function (req, res) {
